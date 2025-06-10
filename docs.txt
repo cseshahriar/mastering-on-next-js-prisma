@@ -1,0 +1,11 @@
+Note:
+-----
+npx create-next-app@latest
+npm run dev
+npm run build
+
+
+build.js
+- chunk.js
+- chunk.js
+- chunk.js
