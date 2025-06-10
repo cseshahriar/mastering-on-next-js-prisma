@@ -1,0 +1,7 @@
+Status codes:
+200 - ok
+201 - created
+202 - accepted
+203 - un authenticated
+204 - no content
+205 - Reset Content

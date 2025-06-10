@@ -1,0 +1,15 @@
+**Best Practices**
+
+**Middleware Controller Best Practices**
+
+* Use to implement API key, user-agent restriction, CSRF, XSRF security, token based API authentication.
+* Use to implement API request rate limit.
+* Logging of incoming HTTP requests.
+* Redirecting the users based on requests.
+* Middleware can inspect a request and decorate it, or reject it, based on what it finds.
+* Middleware is most often considered separate from your application logic.
+* Middleware gives you enough freedom to create your own security mechanism.
+
+---
+
+Let me know if you'd like this summarized, reworded, or formatted differently.

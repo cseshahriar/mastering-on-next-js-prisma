@@ -1,0 +1,36 @@
+Best Practice
+-------------
+Response Body:
+- avoid providing response status code, message via response Body
+- Use json best Practice for json response Body
+- for small result , can use string, bool directly
+- provide proper json encode-decode before writing json Body
+
+
+Response Cookies:
+- a restful api may send cookies just like a regular web application the serves html
+- avoid using response cookies as it is violate stateless principle
+- if required use cookie encryption, decryption and other policies
+
+
+Response Header:
+----------------
+- provide proper http response status code
+- provide proper content type, file type if any
+- provide cache status if any
+- authentication token should provide via response Header
+- only string data is allow for response Header
+- provide content length if any
+- provide response date and time
+- follow request response model describe before
+
+Key REST API principles:
+* REST APIs (Representational State Transfer APIs) are a type of API architecture
+    that provides several standards and conventions that must be followed to
+    facilitate communication between applications.
+* REST APIs are designed to be stateless, scalable, flexible, and easy to use.
+* REST APIs are platform-independent and can be used with any programming language.
+* REST APIs support multiple data formats, such as JSON, XML, and plain text.
+* REST APIs can take advantage of HTTP caching mechanisms, reducing server load
+     and improving response times for repeated requests.
+

@@ -1,0 +1,14 @@
+HTTP request segments
+---------------------
+Request Area: Standard data type
+Body: simple string, json, download, redirect, xml
+Header: key pair value
+URL Parameter: String
+
+
+HTTP response segments
+---------------------
+Request Area: Standard data type
+Body: simple string, json, download, redirect, xml
+Header: key pair value
+Cookies: key pair value

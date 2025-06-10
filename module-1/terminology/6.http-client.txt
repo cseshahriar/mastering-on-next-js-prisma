@@ -1,0 +1,11 @@
+Application level client:
+- Library used in client side application to generate request and received response
+libs:
+- Volly - java
+- Retrofit - java
+- Rest Sharp - c#
+- Axios - js
+- cURL - php
+
+Browser Client:
+- Browser is the primary HTTP client responsible for load the web application

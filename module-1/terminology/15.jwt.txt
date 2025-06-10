@@ -1,0 +1,61 @@
+**JWT (JSON Web Token)** is an open standard (RFC 7519) used for securely transmitting information between parties as a JSON object. It’s commonly used for **authentication and authorization** in web applications.
+
+---
+
+### 🔑 Structure of JWT
+
+A JWT is made up of **three parts**, separated by dots (`.`):
+<Header>.<Payload>.<Signature>
+Example:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+eyJ1c2VyX2lkIjoxMjMsIm5hbWUiOiJOYWZpdWwiLCJleHAiOjE2ODk2NDAwMDB9.
+SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+### 📦 1. Header
+Specifies the algorithm used and token type:
+```json
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+
+### 📄 2. Payload
+
+Contains the claims (data), e.g., user info and expiry:
+
+```json
+{
+  "user_id": 123,
+  "name": "Nafiul",
+  "exp": 1689640000
+}
+```
+
+### 🔏 3. Signature
+
+Used to verify the token wasn’t changed. It's created by hashing the header and payload with a secret key.
+
+HMACSHA256(
+  base64UrlEncode(header) + "." + base64UrlEncode(payload),
+  secret
+)
+
+### 🔐 Use Cases
+
+* **Authentication**: After logging in, a JWT is issued and sent with each request to identify the user.
+* **Authorization**: APIs use the token to determine if the user has permission to access resources.
+
+### ⚙️ How JWT is used in practice
+
+1. User logs in and receives a token.
+2. Token is sent in the HTTP header (`Authorization: Bearer <token>`).
+3. Backend verifies the token on every request.
+4. If valid, user is authenticated.
+
+### 🚨 Security Tips
+
+* **Never store JWTs in localStorage** if CSRF is a concern. Prefer `HttpOnly` cookies.
+* **Set token expiry (`exp`)** to minimize risk.
+* **Use HTTPS** to prevent man-in-the-middle attacks.
+
+Would you like an example of using JWT in Django, Node.js, or any other framework?

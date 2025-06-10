@@ -1,0 +1,59 @@
+### **Encryption and Decryption**
+
+**Common Encryption Algorithms**
+
+* HS384
+* HS512
+* RS256
+* RS384
+* RS512
+* ES256
+* ES384
+* ES512
+* PS256
+* PS384
+* PS512
+
+---
+
+The image also shows a diagram of public key encryption where:
+
+* The sender encrypts plaintext using the recipient’s **public key**
+* The recipient decrypts the ciphertext using their **private key**
+* Different keys are used for encryption and decryption
+
+Let me know if you want an explanation of any of the listed algorithms.
+
+Here is the complete text from the image:
+
+---
+
+### **Encryption and Decryption**
+
+**Common Encryption Algorithms**
+
+* HS384
+* HS512
+* RS256
+* RS384
+* RS512
+* ES256
+* ES384
+* ES512
+* PS256
+* PS384
+* PS512
+
+---
+
+**Diagram (Description):**
+
+* **Sender** sends **Plaintext**
+* Plaintext is **Encrypted** using the **Recipient’s Public Key**
+* Becomes **Ciphertext**
+* Ciphertext is **Decrypted** using the **Recipient’s Private Key**
+* **Recipient** receives the **Plaintext**
+
+> *Different keys are used to encrypt and decrypt message*
+
+Let me know if you’d like this rewritten or explained further.

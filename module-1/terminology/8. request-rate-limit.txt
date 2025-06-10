@@ -1,0 +1,8 @@
+Request rate limit:
+------------------
+Throttle request refers to a process in which a user is allowed to hit the application
+maximum time in per second or per minute. Throttling is also know as request rate
+limiting.
+
+- prevent DDoS attack
+- api scalable

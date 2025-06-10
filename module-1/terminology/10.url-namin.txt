@@ -1,0 +1,10 @@
+URL Naming convention
+----------------------
+- use nouns
+- not indicate any kind of function
+- should alow you to manipulate a resource
+
+example: /users/{id} instead of /getUser
+
+
+https://ostad.app/dashboard/my-courses/658138360ec114d21ffef5dc/videos?module=6581383f0ec114d21ffefa91

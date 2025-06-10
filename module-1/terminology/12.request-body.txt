@@ -1,0 +1,24 @@
+Here is the text from the image:
+
+---
+
+**Best Practices**
+
+**Request Body**
+
+* Request body should be structured in JSON Array/Object pattern
+* Request body hold multipart/form-data like images, audio, video etc
+* Request body should not hold any auth related information.
+* Request body should associated with specific request data model, setter getter can used for this
+
+**Request Header**
+
+* Request header should carry all security related information, like token, auth etc.
+* Only string Key\:Pair value is allowed for header.
+* Request header should provide user agent information of client application.
+* If necessary CSRF/XSRF should provide via header.
+* Request header should associated with middleware controller, where necessary
+
+---
+
+Let me know if you want this formatted differently or rewritten for clarity.

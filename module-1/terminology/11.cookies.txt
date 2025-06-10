@@ -1,0 +1,23 @@
+Cookies
+-------
+* http cookies are small blocks of data created by a web server
+* while a user is browsing a website and placed on the user's web browser
+* encrypted
+* expire date
+* domain
+* last access
+* path
+* session storage: close when browser close
+
+* browser storage:
+- cache storage
+- Cookies: expire time than invalid
+- local storage: data keep always
+- Indexed db: 255 mb data storage
+- session storage : if browser close then data clean
+
+ What are cookies used for:
+ --------------------------
+ - Session management
+ - tracking
+ - personalization

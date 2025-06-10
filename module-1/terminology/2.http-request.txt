@@ -1,0 +1,2 @@
+client ----> http request
+server ----> http response to client

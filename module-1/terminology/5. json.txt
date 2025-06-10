@@ -1,0 +1,8 @@
+JSON (javascript object notation)
+---------------------------------
+* json is a lightweight data-interchange format that is completely language independent
+* It was derived from javascript, but many modern programming language include code to
+  generate and parse JSON format data
+* The official internet media type of JSON is application/json
+* It was designed for human-readable data interchange
+* The filename extension is .json

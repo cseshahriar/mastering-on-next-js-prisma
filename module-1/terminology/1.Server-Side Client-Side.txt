@@ -1,0 +1,10 @@
+Client-Side
+-----------
+The client refers to the browser of user's device that sands
+request to server for your application code. It then turns the response
+it receives from the server into an interface the user can interact with.
+
+Server-Side
+-----------
+server refers to the computer in a data center that stores your application code, receives request from a client,
+docs some computation and send back an appropriate response.

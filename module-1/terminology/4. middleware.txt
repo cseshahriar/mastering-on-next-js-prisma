@@ -1,0 +1,6 @@
+Middleware
+-------------
+* Middleware is a special type of controller execute after request but before in response
+* It is type of filtering mechanism to ensure API securities and more
+* Middleware acts as a bridge between a request and response
+* client request -> routing -> middleware -> controller -> response
