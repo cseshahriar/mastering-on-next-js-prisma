@@ -8,6 +8,7 @@ export default function Home() {
       <img src={"assets/shahriar.jpeg"} alt="img" />
       <Image src="/assets/shahriar.jpeg" alt="img" width={500}
         height={300} />
+
     </>
   );
 }
