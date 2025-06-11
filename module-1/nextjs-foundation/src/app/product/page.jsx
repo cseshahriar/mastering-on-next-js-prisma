@@ -13,10 +13,37 @@ import React from 'react'
 
 // data fetch on server
 async function getData(params) {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const res = await fetch(
+    "https://jsonplaceholder.typicode.com/users",
+    {
+      cache: 'force-cache', // default
+      // cache: 'no-store', // no cash
+      next: {
+        revalidate: 3600 // re fetch
+      }
+    }
+
+  );
+  if(!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
   const data = await res.json()
   return data;
 }
+
+// multiple data fetch
+async function getData(params) {
+  try {
+    const res1 = await fetch("https://jsonplaceholder.typicode.com/users/1");
+    const res2 = await fetch("https://jsonplaceholder.typicode.com/users/2");
+    const data1 = await res1.json()
+    const data2 = await res2.json()
+    return {data1: data1, data2: data2}
+  } catch (error) {
+    throw new Error("Failed to fetch data");
+  }
+}
+
 export default async function ProductPage() {
   // const params = useSearchParams();
   // const name = params.get('name');

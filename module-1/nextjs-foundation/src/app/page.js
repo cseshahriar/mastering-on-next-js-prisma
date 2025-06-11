@@ -74,8 +74,8 @@ export default function Portfolio() {
   return (
     <>
       <Head>
-        <title>John Doe | Full Stack Developer</title>
-        <meta name="description" content="Full Stack Developer Portfolio" />
+        <title>Md. Shahriar Hosen | Full Stack Web Developer</title>
+        <meta name="description" content="Full Stack Web Developer Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -84,12 +84,12 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <span className="text-xl font-bold text-gray-800">JD</span>
+              <span className="text-xl font-bold text-gray-800">Md. Shahriar Hosen</span>
             </div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
+              {['home', 'about', 'skills', 'projects', 'services', 'contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -144,15 +144,16 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center pt-16">
+
+     <section id="home" className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-10 md:mb-0">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                Hi, I'm <span className="text-blue-600">John Doe</span>
+              <h1 className="text-3xl md:text-3xl font-bold text-gray-800 mb-4">
+                Hi, I'm <span className="text-blue-600">Md. Shahriar Hosen</span>
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-600 mb-6">
-                Full Stack Developer
+                Full Stack Web Developer
               </h2>
               <p className="text-gray-600 mb-8 max-w-lg">
                 I build exceptional digital experiences with modern technologies.
@@ -219,7 +220,7 @@ export default function Portfolio() {
                 <div>
                   <h4 className="font-medium text-gray-800 mb-2">Education</h4>
                   <p className="text-gray-600">B.S. in Computer Science</p>
-                  <p className="text-gray-500 text-sm">Stanford University, 2018</p>
+                  <p className="text-gray-500 text-sm">Manarat International University, 2025</p>
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-800 mb-2">Experience</h4>
@@ -346,6 +347,174 @@ export default function Portfolio() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* service section  */}
+       <section id="services" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Full Stack Development Services</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Basic Package */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div className="gradient-bg text-white py-6 px-6">
+                <h3 className="text-2xl font-bold">Starter Package</h3>
+                <p className="mt-2">Perfect for small projects and MVPs</p>
+              </div>
+              <div className="p-6">
+                <div className="text-3xl font-bold mb-4">$1,999</div>
+                <ul className="space-y-3">
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    Responsive Frontend (React/Next.js)
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    Basic Backend API (Node.js/Python)
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    Database Integration
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    Basic Authentication
+                  </li>
+                  <li className="flex items-center text-gray-400">
+                    <i className="fas fa-times text-red-500 mr-2"></i>
+                    Advanced Features
+                  </li>
+                  <li className="flex items-center text-gray-400">
+                    <i className="fas fa-times text-red-500 mr-2"></i>
+                    Admin Dashboard
+                  </li>
+                </ul>
+                <button className="w-full mt-6 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                  Get Started
+                </button>
+              </div>
+            </div>
+
+            {/* Standard Package */}
+            <div className="bg-white rounded-lg shadow-xl overflow-hidden transform scale-105 border-2 border-blue-500">
+              <div className="bg-blue-600 text-white py-6 px-6">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h3 className="text-2xl font-bold">Business Package</h3>
+                    <p className="mt-2">Ideal for growing businesses</p>
+                  </div>
+                  <span className="bg-white text-blue-600 text-xs font-bold px-3 py-1 rounded-full">
+                    POPULAR
+                  </span>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="text-3xl font-bold mb-4">$4,999</div>
+                <ul className="space-y-3">
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    Complete Frontend (React/Next.js)
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    Robust Backend (Node.js/Python/Django)
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    Database + ORM Integration
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    JWT Authentication
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    Admin Dashboard
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    API Documentation
+                  </li>
+                </ul>
+                <button className="w-full mt-6 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                  Get Started
+                </button>
+              </div>
+            </div>
+
+            {/* Premium Package */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div className="gradient-bg text-white py-6 px-6">
+                <h3 className="text-2xl font-bold">Enterprise Package</h3>
+                <p className="mt-2">For complex, scalable solutions</p>
+              </div>
+              <div className="p-6">
+                <div className="text-3xl font-bold mb-4">$9,999+</div>
+                <ul className="space-y-3">
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    Custom Frontend Architecture
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    Microservices Backend
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    Advanced Database Design
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    OAuth & Social Login
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    Real-time Features
+                  </li>
+                  <li className="flex items-center">
+                    <i className="fas fa-check text-green-500 mr-2"></i>
+                    CI/CD Pipeline Setup
+                  </li>
+                </ul>
+                <button className="w-full mt-6 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                  Contact for Quote
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 bg-white p-8 rounded-lg shadow-md">
+            <h3 className="text-2xl font-bold mb-4">Custom Solutions</h3>
+            <p className="mb-4">
+              Don't see what you need? I offer fully customized development services tailored to your specific requirements.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-bold mb-2">Additional Services</h4>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>Legacy System Modernization</li>
+                  <li>Performance Optimization</li>
+                  <li>Technical Consulting</li>
+                  <li>Code Reviews & Audits</li>
+                  <li>DevOps & Deployment</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold mb-2">Technologies I Work With</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">React</span>
+                  <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">Next.js</span>
+                  <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">Node.js</span>
+                  <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">Python</span>
+                  <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">Django</span>
+                  <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                  <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                  <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">AWS</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -491,8 +660,8 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <span className="text-xl font-bold">John Doe</span>
-              <p className="text-gray-400 mt-1">Full Stack Developer</p>
+              <span className="text-xl font-bold">Md. Shahriar Hosen</span>
+              <p className="text-gray-400 mt-1">Full Stack Web Developer</p>
             </div>
             <div className="flex space-x-6">
               <a href="https://github.com/johndoe" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
@@ -507,7 +676,7 @@ export default function Portfolio() {
             </div>
           </div>
           <div className="mt-8 text-center text-gray-400 text-sm">
-            <p>© {new Date().getFullYear()} John Doe. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Md. Shahriar Hosen. All rights reserved.</p>
           </div>
         </div>
       </footer>
