@@ -2,20 +2,32 @@
 
 import React from 'react'
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const Menu = () => {
   const currentRoute = usePathname();
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/');
+    // router.replace('/'); // not store browsing history
+    // router.refresh(); // refresh current page
+    // router.forward(); // immediate forward
+  }
 
   return (
     <div>
-        <Link href="/"  className={currentRoute === "/" ? "active-link" : "pending-link"}>Home</Link>
+        {/** replace not store browsing history */}
+        {/** prefetch store browsing history */}
+        <Link replace prefetch={false} href="/"  className={currentRoute === "/" ? "active-link" : "pending-link"}>Home</Link>
         <Link
+          replace
           href={{pathname: "/product", query: {name: 'book', price: '200 taka'}}}
           className={currentRoute === "/product" ? "active-link" : "pending-link"}
         >Product</Link>
-        <Link href="/product/brand" className={currentRoute === "/product/brand" ? "active-link" : "pending-link"}>Brand</Link>
-    </div>
+        <Link replace href="/product/brand" className={currentRoute === "/product/brand" ? "active-link" : "pending-link"}>Brand</Link>
+        <button className='ml-2' onClick={handleClick}>Go Home</button>
+     </div>
   )
 }
 
