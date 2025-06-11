@@ -10,7 +10,10 @@ const Menu = () => {
   return (
     <div>
         <Link href="/"  className={currentRoute === "/" ? "active-link" : "pending-link"}>Home</Link>
-        <Link href="/product" className={currentRoute === "/product" ? "active-link" : "pending-link"}>Product</Link>
+        <Link
+          href={{pathname: "/product", query: {name: 'book', price: '200 taka'}}}
+          className={currentRoute === "/product" ? "active-link" : "pending-link"}
+        >Product</Link>
         <Link href="/product/brand" className={currentRoute === "/product/brand" ? "active-link" : "pending-link"}>Brand</Link>
     </div>
   )
