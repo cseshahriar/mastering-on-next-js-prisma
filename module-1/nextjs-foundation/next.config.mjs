@@ -5,7 +5,7 @@ const nextConfig = {
     productionBrowserSourceMaps: true,
     httpAgentOptions: {
         keepAlive: true,
-        timeout: 60000
+        timeout: 10000
     },
     compress: true,
     distDir: "build",
