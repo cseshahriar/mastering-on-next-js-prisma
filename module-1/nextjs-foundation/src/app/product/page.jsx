@@ -32,7 +32,7 @@ async function getData(params) {
 }
 
 // multiple data fetch
-async function getData(params) {
+async function getMultipleData(params) {
   try {
     const res1 = await fetch("https://jsonplaceholder.typicode.com/users/1");
     const res2 = await fetch("https://jsonplaceholder.typicode.com/users/2");
@@ -54,7 +54,7 @@ export default async function ProductPage() {
 
   return (
     <div>
-      <h1>Product Page</h1>
+      <h1>Product Page process.env.name { process.env.API_KEY }</h1>
        <table className="table-auto w-full border-collapse border border-gray-300">
         <thead className="bg-gray-200">
           <tr>
