@@ -6,6 +6,9 @@ import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiExternalLink } from 'react-i
 import { FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiTypescript, SiGraphql, SiDocker } from 'react-icons/si';
 
+// lazy loading: dynamic import
+import dynamic from 'next/dynamic'
+const Menu = dynamic(() => import('../components/Menu'), {ssr:false})
 
 
 export default function Portfolio() {
