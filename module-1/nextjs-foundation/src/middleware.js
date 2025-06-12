@@ -1,6 +1,7 @@
+import { jwtVerify } from 'jose';
 import { NextResponse } from 'next/server';
 
-export function middleware(request, response) {
+export async function middleware(request, response) {
 
     // manage request, response
     // const reqHeaders = new Headers(request.headers);
@@ -25,6 +26,23 @@ export function middleware(request, response) {
     //     console.log('This is api for not users');
     //     return NextResponse.next()
     // }
+
+    // login require middleware
+    if(req.nextUrl.pathname.startsWith("/api/Profile")) {
+        // token verify
+        try {
+            const reqHeader = new Headers(req.Headers);
+            const token = reqHeader.get("token");
+            const key = new TextEncoder.encode(process.env.JWT_KEY);
+            const decodedString = await jwtVerify(token, key);
+            return NextResponse.next()
+        } catch (error) {
+            return NextResponse.json({
+                status: "fail",
+                message: "Invalid User"
+            }, {status: 401})
+        }
+    }
     return NextResponse.next()
 }
 
