@@ -1,15 +1,30 @@
 import { NextResponse, NextRequest } from 'next/server';
-import { headers } from 'next/headers'
+import {cookies, headers } from 'next/headers'
+import { redirect } from 'next/navigation';
+
 
 // get request with query params
 export async function GET(request, response) {
     const {searchParams } = new URL(request.url);
     const id = searchParams.get('id')
-    return NextResponse.json({status: true, message: id})
+    redirect('/')
+    return NextResponse.json({message: id}, { status: 200 })
 }
 
 // post with query params and body
 export async function POST(request, response) {
+    // cookies
+    const cookieStore = cookies();
+    const tokenCookie = cookieStore.get('csrf_token');
+
+    const cookie_value = tokenCookie?.value || null;
+    const cookie_name = tokenCookie?.name || null;
+
+    // headers
+    const headerList = headers()
+    const token = (await headerList).get("token")
+    const apiKey = (await headerList).get("api-key")
+
     // read query params
     const {searchParams } = new URL(request.url);
     const id = searchParams.get('id')
@@ -17,7 +32,15 @@ export async function POST(request, response) {
     // read request body or payload
     const body = await request.json();
     // const { name, age, city } = body;
-    return NextResponse.json({id, ...body})
+    return NextResponse.json({
+        id, ...body, token, apiKey, cookie_value, cookie_name
+    }, {
+        status: 201,
+        headers: {
+            'token': apiKey,
+            'Set-Cookies': 'Auth=123;Path=/;',
+        }
+    })
 }
 
 // put
