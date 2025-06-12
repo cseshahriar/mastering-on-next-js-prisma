@@ -3,10 +3,10 @@ const nextConfig = {
     generateEtags: false,
     trailingSlash: false,
     productionBrowserSourceMaps: true,
-    httpAgentOptions: {
-        keepAlive: true,
-        timeout: 10000
-    },
+    // httpAgentOptions: {
+    //     keepAlive: true,
+    //     timeout: 10000
+    // },
     compress: true,
     distDir: "build",
     reactStrictMode: true,
