@@ -28,10 +28,26 @@ export default function Home() {
         <p className="m-5 mx-10 mb-10 -mt-5 bg-slate-500 border-2 border-yellow-500">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
         <h2 className="text-[22px] underline">Flex</h2>
-        <div className="flex w-full space-x-4">
-          <div className="h-16 bg-blue-300 w-6/12">{6/12}</div>
-          <div className="h-16 bg-red-300 w-6/12">{6/12}</div>
+        <div className="flex justify-start">
+          <div className="h-16 bg-blue-300">Sidebar</div>
+          <div className="h-16 bg-red-300">Main</div>
         </div>
+
+        <div className="flex justify-center">
+          <div className="h-16 bg-blue-300">Sidebar</div>
+          <div className="h-16 bg-red-300">Main</div>
+        </div>
+
+        <div className="flex justify-end">
+          <div className="h-16 bg-blue-300">Sidebar</div>
+          <div className="h-16 bg-red-300">Main</div>
+        </div>
+
+        <div className="flex w-full items-center space-x-4 mt-3 border-2 border-slate-400">
+          <div className="h-16 bg-blue-300 w-6/12">{6/12}</div>
+          <div className="h-32 bg-red-300 w-6/12">{6/12}</div>
+        </div>
+
 
         <div className="flex w-full space-x-4 mt-2 mb-2">
           <div className="h-16 bg-green-300 w-4/12">{4/12}</div>
@@ -39,7 +55,7 @@ export default function Home() {
           <div className="h-16 bg-blue-300 w-4/12">{4/12}</div>
         </div>
 
-         <div className="flex w-full space-x-4">
+         <div className="flex r w-full space-x-4">
           <div className="h-16 bg-green-300 w-4/12">{4/12}</div>
           <div className="h-16 bg-blue-300 w-4/12">{4/12}</div>
           <div className="h-16 bg-red-300 w-4/12">{4/12}</div>
@@ -54,14 +70,42 @@ export default function Home() {
 
         <h2 className="text-[22px] underline">Flex direction row</h2>
         <div className="flex space-x-4">
-          <div className="bg-blue-300 w-6/12">{6/12}</div>
-          <div className="bg-red-300 w-6/12">{6/12}</div>
+          <div className="bg-blue-300 w-4/12">{4/12}</div>
+          <div className="bg-red-300 w-8/12">{8/12}</div>
+        </div>
+        <div className="flex space-x-4 mt-3 mb-3">
+          <div className="bg-blue-300 basis-4/12">{4/12}</div>
+          <div className="bg-red-300 basis-8/12">{8/12}</div>
+        </div>
+
+        <div className="flex space-x-4 mt-3 mb-3">
+          <div className="bg-blue-300 w-32">32</div>
+          <div className="bg-red-300 w-full">full-32</div>
         </div>
 
         <h2 className="text-[22px]">Flex direction col</h2>
         <div className="flex flex-col">
           <div className="bg-blue-300 w-6/12">{6/12}</div>
           <div className="bg-red-300 w-6/12">{6/12}</div>
+        </div>
+
+
+        <h2 className="text-[22px]">Flex equal row</h2>
+        <div className="flex w-full flex-nowrap">
+          <div className="bg-blue-300 w-full grow">1</div>
+          <div className="bg-green-300  w-full grow">2</div>
+          <div className="bg-red-300  w-full grow">3</div>
+          <div className="bg-yellow-300  w-full grow">4</div>
+          <div className="bg-lime-300  w-full grow">5</div>
+        </div>
+
+         <h2 className="text-[22px]">Flex equal col</h2>
+        <div className="flex w-full flex-wrap">
+          <div className="bg-blue-300 w-full grow">1</div>
+          <div className="bg-green-300  w-full grow">2</div>
+          <div className="bg-red-300  w-full grow">3</div>
+          <div className="bg-yellow-300  w-full grow">4</div>
+          <div className="bg-lime-300  w-full grow">5</div>
         </div>
 
       </section>
