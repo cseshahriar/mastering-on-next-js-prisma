@@ -6,7 +6,20 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        // vuejs: "#49e659" // text-vuejs
+        vuejs: {
+          100: "#49e659",
+          932: "#434252"
+        }
+      },
+      fontSize: {
+        xs: "12px",
+        sm: "15px",
+        base: "18px"
+      }
+    },
   },
   plugins: [],
 };
