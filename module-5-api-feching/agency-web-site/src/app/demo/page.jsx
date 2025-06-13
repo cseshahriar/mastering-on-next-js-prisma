@@ -4,11 +4,12 @@ async function faceData(url){
     return await response.json();
 }
 
+// multiple api call
 async function getData(){
     try {
-        let url1=process.env.BASE_URL + "api/BrandList";
-        let url2=process.env.BASE_URL + "api/HeroList";
-        let url3=process.env.BASE_URL + "api/StatList";
+        let url1 = process.env.BASE_URL + "api/BrandList";
+        let url2 = process.env.BASE_URL + "api/HeroList";
+        let url3 = process.env.BASE_URL + "api/StatList";
         const [data1, data2, data3] = await Promise.all([
             faceData(url1),
             faceData(url2),

@@ -6,9 +6,6 @@ async function getData(){
     return res.json();
 }
 
-// Less Complexity Less Cost-->
-
-
 
 const Stats = async () => {
     const data = await getData();

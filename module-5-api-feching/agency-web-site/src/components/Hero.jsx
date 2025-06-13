@@ -1,5 +1,6 @@
 import Link from "next/link";
-async function getData(){
+
+async function getData() {
     const res = await fetch(process.env.BASE_URL + "api/HeroList");
     if(!res.ok){
         throw new Error("HeroList Calling Fail");

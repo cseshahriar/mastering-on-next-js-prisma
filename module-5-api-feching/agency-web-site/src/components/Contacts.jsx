@@ -4,12 +4,13 @@ import toast, { Toaster } from 'react-hot-toast';
 import {useState} from "react";
 import axios from "axios";
 
-
 const Contacts = () => {
+    let [FormValue, SetFormValue] = useState({
+        fname:"", lname:"", email:"", msg:""
+    })
 
-    let [FormValue, SetFormValue]=useState({fname:"",lname:"",email:"",msg:""})
-
-    const inputOnChange = (name,value) => {
+    // handle input change
+    const inputOnChange = (name, value) => {
         SetFormValue(
             FormValue=>({
                 ...FormValue,
@@ -29,16 +30,15 @@ const Contacts = () => {
         } else if (FormValue.msg.length === 0) {
             toast.error('Message Required');
         } else {
+            const rawResponse = await axios.post('/api/contact', FormValue);
+            const statusCode = rawResponse.status;
 
-            const rawResponse = await axios.post('/api/contact',FormValue);
-            const statusCode=rawResponse.status;
-            if(statusCode===200){
+            if(statusCode === 200){
                 toast.success('Request Completed');
             }
             else{
                 toast.error('Request Fail');
             }
-
         }
     }
 
@@ -72,14 +72,14 @@ const Contacts = () => {
                                     </div>
                                     <div className="mb-4 flex flex-wrap -mx-2">
                                         <div className="mb-4 lg:mb-0 w-full lg:w-1/2 px-2">
-                                            <input value={FormValue.fname} onChange={(e)=>{inputOnChange('fname',e.target.value)}} className="py-2 px-3 w-full bg-gray-50 rounded leading-loose" type="text" placeholder="First Name"/>
+                                            <input value={FormValue.fname} onChange={(e)=>{inputOnChange('fname', e.target.value)}} className="py-2 px-3 w-full bg-gray-50 rounded leading-loose" type="text" placeholder="First Name"/>
                                         </div>
                                         <div className="w-full lg:w-1/2 px-2">
-                                            <input value={FormValue.lname} onChange={(e)=>{inputOnChange('lname',e.target.value)}} className="py-2 px-3 w-full bg-gray-50 rounded leading-loose" type="text" placeholder="Last Name"/>
+                                            <input value={FormValue.lname} onChange={(e)=>{inputOnChange('lname', e.target.value)}} className="py-2 px-3 w-full bg-gray-50 rounded leading-loose" type="text" placeholder="Last Name"/>
                                         </div>
                                     </div>
-                                    <input  value={FormValue.email} onChange={(e)=>{inputOnChange('email',e.target.value)}} className="mb-4 py-2 px-3 w-full bg-gray-50 rounded leading-loose" type="email" placeholder="hello@example.com"/>
-                                    <textarea value={FormValue.msg} onChange={(e)=>{inputOnChange('msg',e.target.value)}} className="mb-4 py-2 px-3 w-full bg-gray-50 rounded leading-loose" type="email" placeholder="Message"/>
+                                    <input  value={FormValue.email} onChange={(e)=>{inputOnChange('email', e.target.value)}} className="mb-4 py-2 px-3 w-full bg-gray-50 rounded leading-loose" type="email" placeholder="hello@example.com"/>
+                                    <textarea value={FormValue.msg} onChange={(e)=>{inputOnChange('msg', e.target.value)}} className="mb-4 py-2 px-3 w-full bg-gray-50 rounded leading-loose" type="email" placeholder="Message"/>
 
                                     <button type={"submit"} className="mb-4 py-4 w-full rounded text-sm bg-green-600 hover:bg-green-700 text-white font-bold leading-normal transition duration-200">
                                         Send

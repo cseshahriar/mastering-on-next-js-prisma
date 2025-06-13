@@ -1,4 +1,4 @@
-export async function generateMetadata(){
+export async function generateMetadata() {
     const res = await fetch(process.env.BASE_URL + "api/SiteMeta/projects");
     const JSON = await res.json();
     return{

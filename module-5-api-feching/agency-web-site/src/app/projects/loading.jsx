@@ -1,4 +1,5 @@
 import React from 'react';
+
 const Loading = () => {
     return (
         <div className="fixed bg-white inset-0  flex items-center justify-center">
