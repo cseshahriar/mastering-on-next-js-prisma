@@ -43,7 +43,7 @@ export default function ThemeToggle() {
       aria-label="Toggle dark mode"
     >
       {theme === 'light' ? (
-        <MoonIcon className="h-6 w-6" /> // Show moon in light mode
+        <MoonIcon className="h-6 w-6 text-white" /> // Show moon in light mode
       ) : (
         <SunIcon className="h-6 w-6" /> // Show sun in dark mode
       )}
