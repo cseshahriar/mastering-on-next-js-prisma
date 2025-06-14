@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}', // For App Router
     './pages/**/*.{js,ts,jsx,tsx,mdx}', // For Pages Router (if you're using it)
