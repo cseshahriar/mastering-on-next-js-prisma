@@ -99,7 +99,7 @@ export default function Home() {
           <div className="bg-lime-300  w-full grow">5</div>
         </div>
 
-         <h2 className="text-[22px]">Flex equal col</h2>
+        <h2 className="text-[22px]">Flex equal col</h2>
         <div className="flex w-full flex-wrap">
           <div className="bg-blue-300 w-full grow">1</div>
           <div className="bg-green-300  w-full grow">2</div>
@@ -108,8 +108,113 @@ export default function Home() {
           <div className="bg-lime-300  w-full grow">5</div>
         </div>
 
+
+        <h2 className="text-[22px] mt-6">Grid</h2>
+          <div className="container">
+            <div className="grid grid-cols-1 gap-1">
+              <div className="bg-blue-300">1</div>
+              <div className="bg-green-300">2</div>
+              <div className="bg-red-300">3</div>
+              <div className="bg-yellow-300">4</div>
+              <div className="bg-lime-300">5</div>
+            </div>
+          </div>
+
+           <div className="container mt-5">
+            <div className="grid grid-cols-2 gap-1">
+              <div className="bg-blue-300">1</div>
+              <div className="bg-green-300">2</div>
+              <div className="bg-red-300">3</div>
+              <div className="bg-yellow-300">4</div>
+              <div className="bg-lime-300">5</div>
+            </div>
+          </div>
+
+           <div className="container mt-5">
+            <div className="grid grid-cols-3 gap-1">
+              <div className="bg-blue-300">1</div>
+              <div className="bg-green-300">2</div>
+              <div className="bg-red-300">3</div>
+              <div className="bg-yellow-300">4</div>
+              <div className="bg-lime-300">5</div>
+            </div>
+          </div>
+
+          <div className="container mt-5">
+            <div className="grid grid-cols-4 md:grid-cols-2 lg:grid-cols-3 gap-1">
+              <div className="bg-blue-300   rounded-lg">1</div>
+              <div className="bg-green-300  rounded-lg ">2</div>
+              <div className="bg-red-300    rounded-lg ">3</div>
+              <div className="bg-yellow-300 rounded-lg col-span-3 ">4</div>
+              <div className="bg-lime-300   rounded-lg ">5</div>
+              <div className="bg-lime-300   rounded-lg ">6</div>
+            </div>
+          </div>
+
+
+          <h2 className="text-[22px] mt-6">Grid auto cols</h2>
+          <div className="container mt-5">
+            <div className="grid grid-flow-col auto-cols gap-1">
+              <div className="bg-blue-300   rounded-lg">1</div>
+              <div className="bg-green-300  rounded-lg ">2</div>
+              <div className="bg-red-300    rounded-lg ">3</div>
+              <div className="bg-yellow-300 rounded-lg ">4</div>
+              <div className="bg-lime-300   rounded-lg ">5</div>
+              <div className="bg-lime-300   rounded-lg ">6</div>
+              <div className="bg-lime-300   rounded-lg ">7</div>
+            </div>
+          </div>
+
+
+          <h2 className="text-[22px] mt-6">Grid template  row</h2>
+          <div className="container mt-5">
+            <div className="grid grid-rows-3 grid-flow-col gap-1">
+              <div className="bg-blue-300   rounded-lg">1</div>
+              <div className="bg-green-300  rounded-lg ">2</div>
+              <div className="bg-red-300    rounded-lg ">3</div>
+              <div className="bg-yellow-300 rounded-lg ">4</div>
+              <div className="bg-lime-300   rounded-lg ">5</div>
+              <div className="bg-lime-300   rounded-lg ">6</div>
+              <div className="bg-lime-300   rounded-lg ">7</div>
+            </div>
+          </div>
+
+          <div className="container mt-5">
+            <div className="grid grid-rows-4 grid-flow-col gap-4">
+              <div className="bg-blue-300 row-span-4">1</div>
+              <div className="bg-green-300 row-span-2">2</div>
+              <div className="bg-red-300 row-span-2">3</div>
+                <div className="bg-blue-300 row-span-2">4</div>
+              <div className="bg-green-300 row-span-2">5</div>
+            </div>
+          </div>
       </section>
 
+      <h1 className="text-3xl mt-3">Layout</h1>
+      <section className="container mx-auto px-2 bg-red-300">
+        <div className="columns-1">Hello</div>
+      </section>
+
+
+      <h1 className="text-3xl mt-3">Layout columns</h1>
+      <section className="container mx-auto px-2 columns-3">
+       <p className="mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+       <p className="mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+       <p className="mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+       <p className="mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+       <p className="mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </section>
+
+      <h1 className="text-3xl mt-3">Display</h1>
+      <div className="container px-2">
+        <img className="w-64 float-left" src="https://placehold.co/600x400/EEE/31343C" alt="" />
+        <img className="w-64 float-right" src="https://placehold.co/600x400/EEE/31343C" alt="" />
+        <p className="mb-3 clear-both">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </div>
+
+      <h1 className="text-3xl mt-3">Position 2:25:00</h1>
+      <div className="container px-2">
+      </div>
     </main>
   );
 }
