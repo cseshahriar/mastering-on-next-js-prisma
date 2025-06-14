@@ -214,7 +214,141 @@ export default function Home() {
 
       <h1 className="text-3xl mt-3">Position 2:25:00</h1>
       <div className="container px-2">
+        <div className="relative p-8 bg-red-500 rounded-lg w-32 h-32">
+          <div className="w-24 h-24 bg-green-400 absolute top-0 left-0"></div>
+        </div>
+
+
+        <div className="relative p-8 bg-red-500 rounded-lg w-32 h-32 mt-1">
+          <div className="w-24 h-24 bg-green-400 absolute top-0 right-0"></div>
+        </div>
+
+        <div className="relative p-8 bg-red-500 rounded-lg w-32 h-32 mt-1">
+          <div className="w-24 h-24 bg-green-400 absolute bottom-0 right-0"></div>
+        </div>
       </div>
+
+
+      <h1 className="text-3xl mt-3">z index</h1>
+      <div className="flex object-center px-2">
+        <div className="bg-red-100 z-40 w-16 h-16 p-3 border border-white rounded-full">05</div>
+        <div className="bg-red-200 z-30 w-16 h-16 p-3 border border-white rounded-full">04</div>
+        <div className="bg-red-300 z-20 w-16 h-16 p-3 border border-white rounded-full">03</div>
+        <div className="bg-red-400 z-10 w-16 h-16 p-3 border border-white rounded-full">02</div>
+        <div className="bg-red-500 z-0  w-16 h-16 p-3 border border-white rounded-full">0</div>
+      </div>
+
+
+      <h1 className="text-3xl mt-3">Form</h1>
+      <div className="flex px-2">
+        <button className="ring-2 shadow-lg mr-2 shadow-blue-100 p-2 rounded-lg">Save Changes</button>
+        <button className="rounded-none blur-sm" >Save Changes</button>
+      </div>
+
+      <div className="mt-4">
+        <div className="inline-block p-4 text-black bg-white border rounded-lg">
+          <img className="skew-x-6 w-64 mb-4 hover:scale-150 hover:rotate-45" src="https://placehold.co/600x400/EEE/31343C" alt="" />
+          <h1 className="text-2xl">Hello</h1>
+          <p className="mb-4">This is my div</p>
+          <button className="px-3 py-2 text-white rounded-lg shadow-lg cursor-pointer bg-cyan-500 shadow-cyan-500/50">Say Hello</button>
+        </div>
+      </div>
+
+      <h1 className="text-3xl mt-3">Animation</h1>
+      <button className="text-white p-2 rounded-sm transition ease-in-out bg-blue-500 hover:-translate-y-1 hover:bg-indigo-500 delay-500">Save Changes</button>
+
+      <h1 className="text-3xl mt-3">Animation</h1>
+      <button className="bg-indigo-500">
+        <svg className="animation-spin h-5 w-5 mr-3" viewBox="0 0 24 24"></svg>
+        Processing...</button>
+
+
+        <h1 className="text-3xl mt-3">Design System</h1>
+        <div className="p-4 border border-2">
+          <h1 >This is a title</h1>
+          <h2>This is a subtitle</h2>
+          <p>This is a paragraph</p>
+          <a>This is a an anchor</a>
+
+          <div>
+            <input type="text" />
+            <label>Text</label>
+          </div>
+
+          <div>
+            <input type="email" />
+            <label>Email</label>
+          </div>
+
+          <div>
+            <input type="password" />
+            <label>Password</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="checkbox" />
+            <label for="checkbox">Checkbox</label>
+          </div>
+
+          <div>
+            <select>
+              <option>Option 1</option>
+              <option>Option 2</option>
+            </select>
+          </div>
+
+          <div>
+            <button>Save Changes</button>
+          </div>
+        </div>
+
+
+        <table className="mt-3">
+          <thead>
+            <tr>
+              <th>Sl</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>1</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>
+                  <button className="mr-1">View</button>
+                  <button className="bg-purple-500 mr-1">Edit</button>
+                  <button className="bg-red-500">Delete</button>
+                </td>
+            </tr>
+              <tr>
+                <td>2</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>
+                  <button className="mr-1">View</button>
+                  <button className="bg-purple-500 mr-1">Edit</button>
+                  <button className="bg-red-500">Delete</button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+      <a href="#open-modal" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Open Modal</a>
+
+      <div id="open-modal" class="modal-wrapper">
+          <div class="modal-overlay"></div>
+          <div class="modal-content">
+              <a href="#" class="close-button">&times;</a>
+              <h3 class="text-lg font-semibold mb-3">Pure CSS Modal</h3>
+              <p>This modal opens and closes using only CSS, leveraging the `:target` pseudo-class. Notice the URL changes!</p>
+              <p class="mt-4 text-sm text-gray-600">Clicking outside or pressing ESC won't close it with CSS alone.</p>
+          </div>
+      </div>
+
     </main>
   );
 }
