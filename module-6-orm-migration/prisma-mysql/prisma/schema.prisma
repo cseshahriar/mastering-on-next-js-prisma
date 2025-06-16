@@ -22,16 +22,19 @@ enum UserType {
   Staff
   SuperAdmin
 }
+
 // model creation
 model User {
   id Int @id @default(autoincrement())
-  name String
+  name String @db.Char(100) @default("")
   city String
   phone String
-  postCode String
+  postCode String? // optional
   email String @unique
   password String
   role UserType
+  active Boolean @default(false)
+  profile Profile? // one to one back populate
 }
 
 model Numbers {
@@ -68,4 +71,38 @@ model StringText {
   col7      String   @db.Text // Text Equivalent Column
   col8      String   @db.LongText // LongText Equivalent Column
   col9      String   @db.MediumText // MediumText Equivalent Column
+}
+
+// date time type
+model DateContentTypes {
+  id    Int      @id @default(autoincrement()) // Primary key , Integer length 11 & Auto Increment Equivalent Column
+  col1  DateTime @db.Date // Date Equivalent Column
+  col2  DateTime @db.DateTime // DateTime Equivalent Column
+  col3  DateTime @db.Timestamp // Timestamp Equivalent Column Default current_timestamp()
+  col4  DateTime @db.Time // Time Equivalent Column
+  col6  DateTime // DateTime Length 3 Equivalent Column
+}
+
+
+model BlobUser { // image, file, audio, video
+  id    Int    @id @default(autoincrement()) // Primary key , Integer length 11 & Auto Increment Equivalent Column
+  col1  Bytes  @db.Blob // Blob Equivalent Column
+  col2  Bytes  @db.LongBlob // Long Blob Equivalent Column
+  col3  Bytes  @db.TinyBlob // Tiny Blob Equivalent Column
+  col4  Bytes  @db.MediumBlob // Medium Blob Equivalent Column
+  col5  Bytes  @db.Binary(100) // Binary Equivalent Column
+  col6  Bytes  @db.VarBinary(100) // Var Binary Equivalent Column
+}
+
+
+// relationship
+model Profile {
+  id Int @id @default(autoincrement())
+  firstName String
+  lastName String
+  mobile String
+  city String
+  // one to one relationship
+  userID Int @unique
+  User User @relation(fields: [userID], references: [id], onDelete: Restrict, onUpdate: Cascade)
 }
