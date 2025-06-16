@@ -1,0 +1,25 @@
+PRISMA Introduction
+-------------------
+1. Prisma client - query
+2. Prisma Migration - migrate database schema to database table
+3. Prisma Studio - GUI to view and edit data in your database, npm prisma studio
+
+-------------------------------------------------------------------------------
+npx create-next-app@latest
+-------------------------------------------------------------------------------
+1. Install prisma with mysql
+--------------------------
+npm install prisma --save-dev
+npx prisma init --datasource-provider mysql  # sqlite
+
+2. Create migration
+----------------------------
+npx prisma migrate dev --name create_new_user_migration
+
+3. Re migration
+------------------------------
+npx prisma migrate dev --name add_phone_city_postcode_to_user_table
+
+4. Migration Properties(Number Type)
+------------------------------------
+npx prisma migrate dev --name create_numbers_table
