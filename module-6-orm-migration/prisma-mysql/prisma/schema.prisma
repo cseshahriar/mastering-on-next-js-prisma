@@ -13,3 +13,39 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+
+// model creation
+model User {
+  id Int @id @default(autoincrement())
+  name String
+  city String
+  phone String
+  postCode String
+  email String @unique
+  password String
+}
+
+model Numbers {
+  id Int @id @default(autoincrement())  // Primar key
+  coll Int @db.UnsignedInt // unsigned integer length 11
+
+  col2 BigInt // l2n 20
+  col3 BigInt @db.UnsignedBigInt // len 20
+
+  col4 Int @db.SmallInt // len 9
+  col5 Int @db.UnsignedSmallInt // len 9
+
+  col6 Int @db.MediumInt // len 4
+  col7 Int @db.UnsignedMediumInt // len 4
+
+  col8 Int @db.TinyInt // len 4
+  col9 Int @db.UnsignedTinyInt // len 4
+
+  col10 Decimal @db.Decimal // len (65, 30)
+  col11 Float
+  col12 Float @db.Float
+
+  col13 BigInt @default(10)
+  col14 BigInt @unique
+}
