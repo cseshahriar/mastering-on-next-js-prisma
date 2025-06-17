@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@/generated/prisma";
+import { skip } from "node:test";
 
 export async function GET(request) {
     try {
-        const prisma = new PrismaClient();
+        const prisma = new PrismaClient({log:['query', 'info', 'warn', 'error']});
         const searchParams = request.nextUrl.searchParams; // Get search parameters from the URL
 
         const where = {}; // Initialize an empty where clause
@@ -53,12 +54,41 @@ export async function GET(request) {
             };
         }
 
+        // aggregate
+        // const users = await prisma.User.aggregate({
+        //     _count: {id: true},
+        //     _sum: {salary: true},
+        //     _avg: {salary: true},
+        //     _min: {salary: true},
+        //     _max: {salary: true},
+        // })
+
         const users = await prisma.User.findMany({
+            orderBy:{id: 'desc'},
+            skip: 2,
+            take: 2, // limit
             where: where, // Apply the constructed where clause
-            include: {
-                profile: true, // Always include the related profile data
-                post: true,    // Always include the related post data
+            select: {
+                id:true, name: true, email: true,
+                profile: {
+                    select: {firstName: true, lastName:true}
+                }, // Always include the related profile data
+                post: {
+                    where: {title: contains("Prisma")},
+                    orderBy: {id: "desc"}
+                },    // Always include the related post data
+                comments: true
             },
+            // include: {
+            //     profile: {
+            //         select: {firstName: true, lastName:true}
+            //     }, // Always include the related profile data
+            //     post: {
+            //         where: {title: contains("Prisma")},
+            //         orderBy: {id: "desc"}
+            //     },    // Always include the related post data
+            //     comments: true
+            // },
         });
 
         return NextResponse.json({ status: "success", data: users });

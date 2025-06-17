@@ -7,8 +7,10 @@ export async function GET(request, { params }) {
         const prisma = new PrismaClient();
         const { id } = params; // Get the user ID from the URL parameters
 
-        const user = await prisma.User.findUnique({
+
+        const user = await prisma.User.findUnique({ // findFirst
             where: {
+                // name: {contains:"Prisma"},
                 id: parseInt(id), // Convert the ID to an integer as IDs are typically numbers
             },
             include: {
