@@ -15,7 +15,6 @@ datasource db {
 }
 
 
-
 // enum type
 enum UserType {
   Visitor
@@ -39,63 +38,13 @@ model User {
   comments Comment[]
 }
 
-model Numbers {
-  id Int @id @default(autoincrement())  // Primar key
-  coll Int @db.UnsignedInt // unsigned integer length 11
-
-  col2 BigInt // l2n 20
-  col3 BigInt @db.UnsignedBigInt // len 20
-
-  col4 Int @db.SmallInt // len 9
-  col5 Int @db.UnsignedSmallInt // len 9
-
-  col6 Int @db.MediumInt // len 4
-  col7 Int @db.UnsignedMediumInt // len 4
-
-  col8 Int @db.TinyInt // len 4
-  col9 Int @db.UnsignedTinyInt // len 4
-
-  col10 Decimal @db.Decimal // len (65, 30)
-  col11 Float
-  col12 Float @db.Float
-
-  col13 BigInt @default(10)
-  col14 BigInt @unique
+model Employee {
+  id Int @id @default(autoincrement())
+  name String
+  designation String
+  city String
+  salary Float
 }
-
-model StringText {
-  id        Int      @id @default(autoincrement()) // Primary key , Integer length 11 & Auto Increment Equivalent Column
-  col1      String   // Varchar Length 191 Equivalent Column
-  col2      String?  // Nullable Varchar Length 191 Equivalent Column
-  col3      String   @default("Bangladesh") // Default value Bangladesh Varchar Length 191 Equivalent Column
-  col4      String   @db.VarChar(1000) // Varchar Length 1000 Equivalent Column
-  col6      String   @db.TinyText // TinyText Equivalent Column
-  col7      String   @db.Text // Text Equivalent Column
-  col8      String   @db.LongText // LongText Equivalent Column
-  col9      String   @db.MediumText // MediumText Equivalent Column
-}
-
-// date time type
-model DateContentTypes {
-  id    Int      @id @default(autoincrement()) // Primary key , Integer length 11 & Auto Increment Equivalent Column
-  col1  DateTime @db.Date // Date Equivalent Column
-  col2  DateTime @db.DateTime // DateTime Equivalent Column
-  col3  DateTime @db.Timestamp // Timestamp Equivalent Column Default current_timestamp()
-  col4  DateTime @db.Time // Time Equivalent Column
-  col6  DateTime // DateTime Length 3 Equivalent Column
-}
-
-
-model BlobUser { // image, file, audio, video
-  id    Int    @id @default(autoincrement()) // Primary key , Integer length 11 & Auto Increment Equivalent Column
-  col1  Bytes  @db.Blob // Blob Equivalent Column
-  col2  Bytes  @db.LongBlob // Long Blob Equivalent Column
-  col3  Bytes  @db.TinyBlob // Tiny Blob Equivalent Column
-  col4  Bytes  @db.MediumBlob // Medium Blob Equivalent Column
-  col5  Bytes  @db.Binary(100) // Binary Equivalent Column
-  col6  Bytes  @db.VarBinary(100) // Var Binary Equivalent Column
-}
-
 
 // relationship
 

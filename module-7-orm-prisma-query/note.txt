@@ -1,2 +1,4 @@
 Prisma Query
 --------------
+ Ensure prisma client installed "@prisma/client": "^6.9.0",
+ npx prisma migrate dev --name create_employee_table
