@@ -26,9 +26,6 @@ enum UserType {
 model User {
   id Int @id @default(autoincrement())
   name String @db.Char(100) @default("")
-  city String
-  phone String
-  postCode String? // optional
   email String @unique
   password String
   role UserType
