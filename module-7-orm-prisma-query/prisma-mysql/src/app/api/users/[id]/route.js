@@ -27,58 +27,59 @@ export async function GET(request, { params }) {
     }
 }
 
-// update
-export async function PATCH(request, { params }) {
+
+export async function PATCH(request, context) {
+    const { params } = context;
+    const id = parseInt(params.id);
+    const prisma = new PrismaClient();
+    const payload = await request.json();
+
     try {
-        const prisma = new PrismaClient();
-        const { id } = params;
-        const payload = await request.json();
-
-        // Separate user and profile/post data for updates
-        const { name, email, password, role, active, firstName, lastName, mobile, city, title, description, ...rest } = payload;
-
-        const userDataToUpdate = {};
-        if (name !== undefined) userDataToUpdate.name = name;
-        if (email !== undefined) userDataToUpdate.email = email;
-        if (password !== undefined) userDataToUpdate.password = password; // Consider hashing password before updating
-        if (role !== undefined) userDataToUpdate.role = role;
-        if (active !== undefined) userDataToUpdate.active = active;
-
-        const updatedUser = await prisma.User.update({
-            where: {
-                id: parseInt(id),
-            },
+        const updatedUser = await prisma.user.update({
+            where: { id },
             data: {
-                ...userDataToUpdate,
-                // Handle nested updates for profile and post if provided in the payload
-                profile: (firstName !== undefined || lastName !== undefined || mobile !== undefined || city !== undefined) ? {
-                    update: { // Use 'update' for existing related records
-                        ...(firstName !== undefined && { firstName }),
-                        ...(lastName !== undefined && { lastName }),
-                        ...(mobile !== undefined && { mobile }),
-                        ...(city !== undefined && { city }),
+                name: payload.name,
+                password: payload.password,
+                profile: {
+                    update: {
+                        firstName: payload.profile.firstName,
+                        lastName: payload.profile.lastName,
+                        mobile: payload.profile.mobile,
+                        city: payload.profile.city
                     }
-                } : undefined, // Don't try to update if no profile data is provided
+                }
             },
             include: {
-                profile: true,
-                post: true,
+                profile: true
             }
         });
 
         return NextResponse.json({ status: "success", data: updatedUser });
     } catch (error) {
-        if (error.code === 'P2025') { // Prisma error code for record not found
-            return NextResponse.json({ status: "fail", data: "User not found for update" }, { status: 404 });
+        if (error.code === 'P2025') {
+            return NextResponse.json(
+                { status: "fail", data: "User or profile not found for update" },
+                { status: 404 }
+            );
         }
-        return NextResponse.json({ status: "fail", data: error.message });
+        console.error("PATCH error:", error);
+        return NextResponse.json({ status: "fail", data: error.message }, { status: 500 });
+    } finally {
+        await prisma.$disconnect();
     }
 }
 
+
+
+// delete user
 export async function DELETE(request, { params }) {
     try {
         const prisma = new PrismaClient();
         const { id } = params;
+
+        await prisma.comment.deleteMany({ where: { userID: parseInt(id) } });
+        await prisma.post.deleteMany({ where: { userID: parseInt(id) } });
+        await prisma.profile.deleteMany({ where: { userID: parseInt(id) } });
 
         const deletedUser = await prisma.User.delete({
             where: {
